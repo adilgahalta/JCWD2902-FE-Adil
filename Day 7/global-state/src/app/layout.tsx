@@ -1,8 +1,9 @@
+/** @format */
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/app/components/navbar";
-import Contextprovider from "@/app/providers/context.provider";
+import Navbar from "@/components/navbar";
+import ContextProvider from "@/providers/context.provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,12 +20,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Contextprovider>
+        <ContextProvider>
           <Navbar />
           <div className="flex justify-center w-full">
-            <div className="mt-16 mx-5 w-full max-w-screen-xl">{children}</div>
+            <div className=" mt-16 mx-5  w-full max-w-screen-xl">
+              {children}
+            </div>
           </div>
-        </Contextprovider>
+        </ContextProvider>
       </body>
     </html>
   );

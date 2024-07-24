@@ -13,6 +13,9 @@ export default function Navbar({}: Props) {
       <Link href={"/register"}>Register</Link>
       <Link href={"/hooks"}>Belajar Hooks</Link>
       <Link href={"/calculate"}>Calculator</Link>
+      <Link href={"/ref"}>Ref</Link>
+      <Link href={"/reducer"}>reducer</Link>
+      <Link href={"/context"}>context</Link>
     </div>
   );
 }

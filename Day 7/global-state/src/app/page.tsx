@@ -1,5 +1,5 @@
-import Image from "next/image";
+/** @format */
 
 export default function Home() {
-  return <div>Page</div>;
+  return <div>page</div>;
 }
