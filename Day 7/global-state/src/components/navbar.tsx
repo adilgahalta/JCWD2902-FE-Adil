@@ -13,7 +13,9 @@ type Props = {};
 export default function Navbar({}: Props) {
   const context = useContext(UserContext);
   const counter = useAppSelector((state) => state.counter);
-  const konter = useSelector((state) => state.kounter);
+  const konter = useSelector(
+    (state: { kounter: { value: number } }) => state.kounter
+  );
   const counterContext = useContext(CounterContext);
   return (
     <div className="w-full flex bg-black  text-white fixed justify-center">
