@@ -4,6 +4,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import ContextProvider from "@/providers/context.provider";
+import ReduxProvider from "@/providers/redux.provider";
+import CounterProvider from "@/providers/counter.provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,14 +22,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ContextProvider>
-          <Navbar />
-          <div className="flex justify-center w-full">
-            <div className=" mt-16 mx-5  w-full max-w-screen-xl">
-              {children}
-            </div>
-          </div>
-        </ContextProvider>
+        <ReduxProvider>
+          <ContextProvider>
+            <CounterProvider>
+              <Navbar />
+              <div className="flex justify-center w-full">
+                <div className=" mt-16 mx-5  w-full max-w-screen-xl">
+                  {children}
+                </div>
+              </div>
+            </CounterProvider>
+          </ContextProvider>
+        </ReduxProvider>
       </body>
     </html>
   );

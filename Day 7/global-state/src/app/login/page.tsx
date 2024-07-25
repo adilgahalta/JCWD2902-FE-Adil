@@ -1,6 +1,6 @@
 /** @format */
 "use client";
-import { init } from "@/constant/user";
+import { data } from "@/data.json";
 import { UserContext } from "@/providers/context.provider";
 import { TUser } from "@/types/user";
 import React, { ChangeEvent, useContext, useEffect, useState } from "react";
@@ -20,9 +20,20 @@ export default function Page({}: Props) {
     localStorage.setItem("input", JSON.stringify(input));
   }, [input]);
 
+  const [name, setName] = useState<string>(data.name);
+
   return (
     <div>
       <div className="flex flex-col gap-2">
+        {name}
+        <button
+          onClick={() => {
+            data.name = "rudy";
+            setName("rudy");
+          }}
+        >
+          ubah
+        </button>
         <div>
           <input
             type="text"
