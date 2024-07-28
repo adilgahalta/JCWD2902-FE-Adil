@@ -12,6 +12,7 @@ export const ProductContext = createContext<IProductContext | null>(null);
 
 export default function ProductProvider({ children }: Props) {
   const [products, setProducts] = useState<ICard[]>([...data]);
+
   const [search, setSearch] = useState<string>("");
 
   const filter = (product_name: string) => setSearch(product_name);
@@ -23,7 +24,7 @@ export default function ProductProvider({ children }: Props) {
 
   const editProduct = (id: number, data: ICard) => {
     const tmp = [...products];
-    const findIdx = products.findIndex((_) => _.id == id);
+    const findIdx = tmp.findIndex((_) => _.id == id);
     tmp[findIdx] = { ...tmp[findIdx], ...data };
     setProducts(tmp);
   };

@@ -1,0 +1,57 @@
+{
+  "superheroes": [
+    {
+      "id": 1,
+      "name": "Batman"
+    },
+    {
+      "id": 2,
+      "name": "Superman"
+    },
+    {
+      "id": 3,
+      "name": "Flash"
+    },
+    {
+      "name": "Joker",
+      "id": 4
+    },
+    {
+      "name": "Hulk",
+      "id": 5
+    },
+    {
+      "username": "halo",
+      "id": 6
+    },
+    {
+      "username": "halo",
+      "id": 7
+    },
+    {
+      "username": "test",
+      "id": 8
+    },
+    {
+      "username": "test",
+      "name": "test",
+      "id": 9
+    },
+    {
+      "name": "halo",
+      "id": 10
+    },
+    {
+      "name": "abc",
+      "id": 11
+    },
+    {
+      "name": "testing",
+      "id": 12
+    },
+    {
+      "name": "sa",
+      "id": 13
+    }
+  ]
+}
