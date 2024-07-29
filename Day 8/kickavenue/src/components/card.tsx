@@ -2,7 +2,7 @@
 "use client";
 import { ICard } from "@/interfaces/card.interface";
 import { ProductContext } from "@/providers/product.provider";
-import { useContext, useEffect, useMemo, useState } from "react";
+import { useContext, useMemo } from "react";
 import { DrawerDialogDemo } from "./modal";
 
 export function CardList() {
