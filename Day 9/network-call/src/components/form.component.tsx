@@ -1,10 +1,9 @@
 /** @format */
 
 "use client";
-
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { promise, z } from "zod";
+import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -18,23 +17,46 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { api } from "@/config/axios.config";
+import { useEffect } from "react";
+import { THero } from "./heroes.component";
 
 const formSchema = z.object({
+  id: z.number().optional(),
   name: z.string().min(10, {
-    message: "Username must be at least 2 characters.",
+    message: "Username must be at least 10 characters.",
   }),
 });
 
-export function HeroForm({ fetch }: { fetch: () => Promise<void> }) {
+interface Props {
+  fetch: () => Promise<void>;
+  editHero: THero;
+}
+
+export function HeroForm({ fetch, editHero }: Props) {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      id: undefined,
+    },
   });
-  const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    console.log(values);
 
-    await api.post("/superheroes", values);
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    if (form.getValues("id")) {
+      await api.patch("/superheroes/" + values.id, values);
+    } else {
+      await api.post("/superheroes", values);
+    }
+    form.control._reset();
     await fetch();
   };
+
+  useEffect(() => {
+    if (editHero?.name && editHero?.id) {
+      form.setValue("name", editHero.name);
+      form.setValue("id", editHero.id);
+    }
+  }, [editHero]);
 
   return (
     <Form {...form}>
@@ -42,6 +64,8 @@ export function HeroForm({ fetch }: { fetch: () => Promise<void> }) {
         onSubmit={form.handleSubmit(onSubmit)}
         className="space-y-8 max-w-screen-sm text-left "
       >
+        {form.getValues("id")}
+
         <FormField
           control={form.control}
           name="name"
@@ -56,6 +80,7 @@ export function HeroForm({ fetch }: { fetch: () => Promise<void> }) {
             </FormItem>
           )}
         />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

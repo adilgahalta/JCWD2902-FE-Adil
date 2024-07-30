@@ -16,9 +16,24 @@ import {
 import { api } from "@/config/axios.config";
 import { HeroForm } from "./form.component";
 
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+
+export type THero = (typeof superheroes)[0] | null;
+
 export function DataTableDemo() {
   const [data, setData] = React.useState<typeof superheroes>([]);
   const [search, setSearch] = React.useState<string>("");
+  const [editHero, setEditHero] = React.useState<THero>(null);
 
   const fetchSuperHeroes = async () => {
     const response = await api.get("/superheroes", {
@@ -27,6 +42,15 @@ export function DataTableDemo() {
       },
     });
     setData(response.data);
+  };
+
+  const deleteHero = async (id: number) => {
+    await api.delete("/superheroes/" + id);
+    await fetchSuperHeroes();
+  };
+
+  const selectHero = async (hero: THero) => {
+    setEditHero(hero);
   };
 
   React.useEffect(() => {
@@ -42,12 +66,14 @@ export function DataTableDemo() {
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
+
       <div className="rounded-md border">
         <Table>
           <TableHeader>
             <TableRow>
               <TableHead> ID</TableHead>
               <TableHead> NAME</TableHead>
+              <TableHead className="w-10"> ACTION</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -55,6 +81,33 @@ export function DataTableDemo() {
               <TableRow key={key}>
                 <TableCell>{hero.id}</TableCell>
                 <TableCell>{hero.name}</TableCell>
+                <TableCell className="flex justify-center gap-2">
+                  <Button onClick={() => selectHero(hero)}>Edit</Button>
+
+                  <AlertDialog>
+                    <AlertDialogTrigger>
+                      <Button variant={"destructive"}>Delete</Button>
+                    </AlertDialogTrigger>
+                    <AlertDialogContent>
+                      <AlertDialogHeader>
+                        <AlertDialogTitle>
+                          Are you absolutely sure?
+                        </AlertDialogTitle>
+                        <AlertDialogDescription>
+                          This action cannot be undone. This will permanently
+                          delete your hero and remove your data from our
+                          servers.
+                        </AlertDialogDescription>
+                      </AlertDialogHeader>
+                      <AlertDialogFooter>
+                        <AlertDialogCancel>Cancel</AlertDialogCancel>
+                        <AlertDialogAction onClick={() => deleteHero(hero.id)}>
+                          Yes
+                        </AlertDialogAction>
+                      </AlertDialogFooter>
+                    </AlertDialogContent>
+                  </AlertDialog>
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
@@ -84,7 +137,7 @@ export function DataTableDemo() {
         </div>
       </div>
 
-      <HeroForm fetch={fetchSuperHeroes} />
+      <HeroForm fetch={fetchSuperHeroes} editHero={editHero} />
     </div>
   );
 }
