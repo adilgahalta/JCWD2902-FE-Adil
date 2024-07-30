@@ -10,10 +10,6 @@ import { HeroForm } from "@/components/form.component";
 export default function Home() {
   return (
     <center>
-      {/* {data.map((_, key) => (
-        <div key={key}>{_.name}</div>
-      ))} */}
-
       <DataTableDemo />
     </center>
   );
