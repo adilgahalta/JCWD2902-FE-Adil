@@ -1,0 +1,25 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "product_name": "Honda Brio (2019)",
+      "img_url": "https://apollo.olx.co.id/v1/files/666463266aa54-ID/image;s=780x0;q=60",
+      "price": 167000000,
+      "slug": "honda-brio-2019"
+    },
+    {
+      "id": 2,
+      "product_name": "Honda Brio (2017)",
+      "img_url": "https://apollo.olx.co.id/v1/files/669d0a14db524-ID/image;s=780x0;q=60",
+      "price": 109000000,
+      "slug": "honda-brio-2017"
+    },
+    {
+      "id": 3,
+      "product_name": "Honda Brio (2019)",
+      "img_url": "https://apollo.olx.co.id/v1/files/667a67f2eb23-ID/image;s=780x0;q=60",
+      "price": 148000000,
+      "slug": "honda-brio-2019-2"
+    }
+  ]
+}
