@@ -1,0 +1,34 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "category": "Spesial",
+      "img_src": "https://static.order.kfcku.com/images/category/lg/Spesial.jpg?v=46oxZg"
+    },
+    {
+      "id": 2,
+      "category": "Combo",
+      "img_src": "https://static.order.kfcku.com/images/category/lg/Combo.jpg?v=46oxZg"
+    },
+    {
+      "id": 3,
+      "category": "Alacarte",
+      "img_src": "https://static.order.kfcku.com/images/category/lg/Alacarte.jpg?v=46oxZg"
+    },
+    {
+      "id": 4,
+      "category": "Drinks",
+      "img_src": "https://static.order.kfcku.com/images/category/lg/Drinks.jpg?v=46oxZg"
+    },
+    {
+      "id": 5,
+      "category": "Kids Meal",
+      "img_src": "https://static.order.kfcku.com/images/category/lg/Kids%20Meal.jpg?v=46oxZg"
+    },
+    {
+      "id": 6,
+      "category": "Dessert",
+      "img_src": "https://static.order.kfcku.com/images/category/lg/Dessert.jpg?v=46oxZg"
+    }
+  ]
+}
