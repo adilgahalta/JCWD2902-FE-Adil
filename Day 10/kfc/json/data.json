@@ -35,6 +35,54 @@
       "password": "Password123",
       "confirm_password": "Password123",
       "id": 3
+    },
+    {
+      "full_name": "Jhonny",
+      "phone_number": "081234567",
+      "gender": "Pria",
+      "date": 1,
+      "month": 1,
+      "year": 1960,
+      "email": "jhonny@mail.com",
+      "password": "Password123",
+      "confirm_password": "Password123",
+      "id": 4
+    },
+    {
+      "full_name": "John doe",
+      "phone_number": "081234568",
+      "gender": "Pria",
+      "date": 1,
+      "month": 1,
+      "year": 1960,
+      "email": "john@mail.com",
+      "password": "Password123",
+      "confirm_password": "Password123",
+      "id": 5
+    },
+    {
+      "full_name": "juan f kenedy",
+      "phone_number": "081234589",
+      "gender": "Perempuan",
+      "date": 2,
+      "month": 1,
+      "year": 1963,
+      "email": "juanfkenedy@mail.com",
+      "password": "Password123",
+      "confirm_password": "Password123",
+      "id": 6
+    },
+    {
+      "full_name": "bogel sakit",
+      "phone_number": "081234567891",
+      "gender": "Pria",
+      "date": 1,
+      "month": 2,
+      "year": 1964,
+      "email": "bogel@mail.com",
+      "password": "Password123",
+      "confirm_password": "Password123",
+      "id": 7
     }
   ],
   "categories": [

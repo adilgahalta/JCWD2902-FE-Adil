@@ -5,6 +5,15 @@
 @tailwind utilities;
 body {
   font-family: Roboto, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  position: relative;
+}
+
+body::after {
+  content: "";
+  display: block;
+  height: 390px;
 }
 
 input {

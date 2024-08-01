@@ -3,7 +3,7 @@
 import { registerSchema } from "@/schemas/auth.schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import React from "react";
-import { useFieldArray, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Form } from "@/components/ui/form";
 import {
@@ -18,9 +18,10 @@ import { ErrorMessage } from "@hookform/error-message";
 type Props = {};
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { api } from "@/config/axios.config";
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { actionRegister } from "@/action/auth.action";
 export default function RegisterComponent({}: Props) {
   const form = useForm<z.infer<typeof registerSchema>>({
     resolver: zodResolver(registerSchema),
@@ -33,10 +34,18 @@ export default function RegisterComponent({}: Props) {
     handleSubmit,
   } = form;
 
+  const router = useRouter();
+
   const onSubmit = async (values: z.infer<typeof registerSchema>) => {
-    await api.post("/users", values);
-    toast.success("Registrasi Berhasil");
-    form.reset();
+    actionRegister(values)
+      .then((res) => {
+        form.reset();
+        router.push("/login");
+        toast.success(res.message);
+      })
+      .catch((err) => {
+        toast.success(err.message);
+      });
   };
 
   return (
@@ -143,7 +152,7 @@ export default function RegisterComponent({}: Props) {
               <SelectValue placeholder="Tahun" />
             </SelectTrigger>
             <SelectContent>
-              {[...Array(new Date().getFullYear() - 1960)].map((_, i) => (
+              {[...Array(new Date().getFullYear() - 1959)].map((_, i) => (
                 <SelectItem
                   key={i}
                   value={String(i + 1959 + 1)}
@@ -206,7 +215,7 @@ export default function RegisterComponent({}: Props) {
             Konfirmasi kata sandi <span className="text-red-500">*</span>
           </label>
           <div className="text-red-500 pt-[5px] min-h-[25px] mb-[5px]">
-            <ErrorMessage errors={errors} name={"password"} />
+            <ErrorMessage errors={errors} name={"confirm_password"} />
           </div>
         </div>
 

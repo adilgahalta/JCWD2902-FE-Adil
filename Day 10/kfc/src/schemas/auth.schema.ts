@@ -13,7 +13,9 @@ export const registerSchema = z
         message:
           "Harap masukkan nomor telepon yang valid mulai dengan 0 atau 62 dan minimum 9 digit.",
       })
-      .refine(validator.isMobilePhone),
+      .refine(validator.isMobilePhone, {
+        message: "Nomor telepon tidak valid",
+      }),
     gender: z.enum(["Pria", "Perempuan"], {
       message: "Silahkan Pilih Jenis Kelamin",
     }),
@@ -51,7 +53,7 @@ export const registerSchema = z
       return values.password === values.confirm_password;
     },
     {
-      message: "Silakan masukkan kata sandi yang cocok dengan kata sandi baru.",
+      message: "Silakan masukkan kata sandi yang sama.",
       path: ["confirm_password"],
     }
   );
