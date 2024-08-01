@@ -12,13 +12,13 @@ export default function template({ children }: Props) {
   return (
     <ProviderContent>
       <div className="w-full grid lg:grid-cols-2 ">
-        <div className="bg-[#E21C2A] hidden lg:block w-full">
+        <div className="bg-[#E21C2A] hidden lg:block w-full max-w-[634px] relative  m-auto h-full px-[23px]">
           <Image
             src={AbahKFC}
             alt=""
-            width={526}
-            height={526}
-            className=" max-w-[526px] w-full aspect-square m-auto "
+            width={634}
+            height={634}
+            className="w-full aspect-square m-auto "
           />
         </div>
         {children}

@@ -2,17 +2,11 @@
 "use client";
 import { loginSchema } from "@/schemas/auth.schema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import React from "react";
+import React, { useEffect } from "react";
 import { useFieldArray, useForm } from "react-hook-form";
 import { z } from "zod";
 import { Form } from "@/components/ui/form";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+
 import { ErrorMessage } from "@hookform/error-message";
 import Google from "@/../public/google_icon.5b8ad5292f705ef0c229.ico";
 type Props = {};
@@ -22,11 +16,15 @@ import { api } from "@/config/axios.config";
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
 import Image from "next/image";
+import { loginAction } from "@/action/auth.action";
+import { useRouter } from "next/navigation";
+
 export default function LoginComponent({}: Props) {
   const form = useForm<z.infer<typeof loginSchema>>({
     resolver: zodResolver(loginSchema),
     defaultValues: {},
   });
+  const router = useRouter();
 
   const {
     register,
@@ -35,9 +33,21 @@ export default function LoginComponent({}: Props) {
   } = form;
 
   const onSubmit = async (values: z.infer<typeof loginSchema>) => {
-    await api.post("/users", values);
-    toast.success("Registrasi Berhasil");
-    form.reset();
+    await loginAction(values)
+      .then((res) => {
+        toast(res?.message);
+        router.push("/");
+      })
+      .catch((err) => {
+        if (err instanceof Error)
+          toast(err.message, {
+            style: {
+              background: "red",
+              border: "none",
+              color: "#fff",
+            },
+          });
+      });
   };
 
   return (

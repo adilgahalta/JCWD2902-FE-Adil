@@ -11,7 +11,7 @@ type Props = {};
 
 export default function Footer({}: Props) {
   return (
-    <div className=" bg-[#202124] w-full relative bottom-0">
+    <div className=" bg-[#202124] w-full absolute bottom-0 ">
       <ProviderContent>
         <div className="grid grid-cols-5 text-white w-full pt-[50px] pb-[20px] px-[15px] ">
           <div>
