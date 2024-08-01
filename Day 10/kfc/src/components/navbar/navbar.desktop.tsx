@@ -1,14 +1,13 @@
 /** @format */
-
 import Image from "next/image";
 import React from "react";
 import Logo from "@/../public/kfc-logo.svg";
 import Link from "next/link";
 import "./navbar.css";
-import { Menu } from "lucide-react";
-
-type Props = {};
-export default function NavbarDesktop({}: Props) {
+import { auth } from "@/auth";
+import ButtonLogout from "./button.navbar";
+export default async function NavbarDesktop() {
+  const session = await auth();
   return (
     <div className="w-full shadow sticky top-0 bg-white z-50">
       <div className="  max-w-[1220px]  2xl:max-w-[1440px] m-auto w-full p-3 px-[15px] flex justify-between">
@@ -26,6 +25,12 @@ export default function NavbarDesktop({}: Props) {
           >
             MENU
           </Link>
+          <Link
+            href="/"
+            className="flex items-center w-[85px] text-lg  justify-end font-bold"
+          >
+            {session?.user.full_name}
+          </Link>
         </div>
 
         <div className="flex max-w-[465px] w-full text-[15px] items-center justify-end">
@@ -41,9 +46,7 @@ export default function NavbarDesktop({}: Props) {
             <div className="cart">1</div>
           </div>
 
-          <button className="ml-[14px]">
-            <Menu width={25} height={33} />
-          </button>
+          <ButtonLogout />
         </div>
       </div>
     </div>

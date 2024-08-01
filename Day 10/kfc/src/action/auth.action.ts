@@ -2,30 +2,24 @@
 "use server";
 import { api } from "@/config/axios.config";
 import { loginSchema, registerSchema } from "@/schemas/auth.schema";
-import { cookies } from "next/headers";
 import { z } from "zod";
-
+import { signIn, signOut } from "@/auth";
 export const loginAction = async (values: z.infer<typeof loginSchema>) => {
   try {
-    const res = await api.get("/users", {
-      params: {
-        phone_number: values.phone_number,
-        password: values.password,
-      },
+    await signIn("credentials", {
+      phone_number: values.phone_number,
+      password: values.password,
     });
-
-    if (res.data.length === 0) throw new Error("Login Gagal");
-    const user = res.data[0];
-    delete user.password;
-    delete user.confirm_password;
-
-    cookies().set("user", JSON.stringify(user));
     return {
       message: "Login Berhasil",
     };
   } catch (error) {
     throw error;
   }
+};
+
+export const actionLogout = async () => {
+  return await signOut({ redirect: true, redirectTo: "/login" });
 };
 
 export const actionRegister = async (
