@@ -1,4 +1,42 @@
 {
+  "users": [
+    {
+      "full_name": "Jordan",
+      "phone_number": "087838833",
+      "gender": "Perempuan",
+      "date": 15,
+      "month": 10,
+      "year": 1996,
+      "email": "test@mail.com",
+      "password": "Password123",
+      "confirm_password": "Password123",
+      "id": 1
+    },
+    {
+      "full_name": "Udins",
+      "phone_number": "087878788823",
+      "gender": "Pria",
+      "date": 21,
+      "month": 11,
+      "year": 1988,
+      "email": "test2@mail.com",
+      "password": "Password123",
+      "confirm_password": "Password123",
+      "id": 2
+    },
+    {
+      "full_name": "testing",
+      "phone_number": "081929292929",
+      "gender": "Pria",
+      "date": 2,
+      "month": 9,
+      "year": 1965,
+      "email": "jordansumardi@hotmail.com",
+      "password": "Password123",
+      "confirm_password": "Password123",
+      "id": 3
+    }
+  ],
   "categories": [
     {
       "id": 1,
