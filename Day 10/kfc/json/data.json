@@ -83,6 +83,18 @@
       "password": "Password123",
       "confirm_password": "Password123",
       "id": 7
+    },
+    {
+      "full_name": "asep shaker",
+      "phone_number": "082937619928",
+      "gender": "Pria",
+      "date": 5,
+      "month": 9,
+      "year": 1967,
+      "email": "asep@mail.com",
+      "password": "Pasword123",
+      "confirm_password": "Pasword123",
+      "id": 8
     }
   ],
   "categories": [
