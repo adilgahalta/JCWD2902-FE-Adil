@@ -5,8 +5,34 @@
 @tailwind utilities;
 body {
   font-family: Roboto, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  position: relative;
 }
 
+body::after {
+  content: "";
+  display: block;
+  height: 390px;
+}
+
+input {
+  outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+select {
+  outline: none;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 @layer base {
   :root {
     --background: 0 0% 100%;

@@ -10,7 +10,7 @@ import { Menu } from "lucide-react";
 type Props = {};
 export default function NavbarDesktop({}: Props) {
   return (
-    <div className="w-full shadow sticky top-0 bg-white z-10">
+    <div className="w-full shadow sticky top-0 bg-white z-50">
       <div className="  max-w-[1220px]  2xl:max-w-[1440px] m-auto w-full p-3 px-[15px] flex justify-between">
         <div className="flex">
           <Image
