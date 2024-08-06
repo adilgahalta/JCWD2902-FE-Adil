@@ -8,6 +8,8 @@ body {
   min-height: 100vh;
   margin: 0;
   position: relative;
+  padding-top: 100px;
+
 }
 
 body::after {
@@ -26,6 +28,10 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 select {
+  outline: none;
+}
+
+::-webkit-scrollbar {
   outline: none;
 }
 

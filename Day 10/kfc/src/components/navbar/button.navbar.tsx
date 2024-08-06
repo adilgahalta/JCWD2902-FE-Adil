@@ -15,7 +15,7 @@ export default function ButtonLogout({}: Props) {
     });
   };
   return (
-    <button className="ml-[14px]" onClick={logout}>
+    <button className="ml-[14px] hidden md:block" onClick={logout}>
       <Menu width={25} height={33} />
     </button>
   );

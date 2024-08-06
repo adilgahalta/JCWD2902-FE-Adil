@@ -1,5 +1,7 @@
 /** @format */
 
+import { hostname } from "os";
+
 const nextConfig = {
   images: {
     remotePatterns: [
@@ -7,7 +9,11 @@ const nextConfig = {
         protocol: "https",
         hostname: "static.order.kfcku.com",
         port: "",
-        pathname: "/images/category/lg/**",
+      },
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+        port: "",
       },
     ],
   },
