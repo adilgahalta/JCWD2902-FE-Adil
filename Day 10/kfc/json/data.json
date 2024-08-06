@@ -116,5 +116,119 @@
       "category": "Dessert",
       "img_src": "https://static.order.kfcku.com/images/category/lg/Dessert.jpg?v=46oxZg"
     }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "img_src": "https://static.order.kfcku.com/images/items/lg/12988.jpg?v=3JNPr3",
+      "product_name": " MDL Burger Combo ",
+      "description": "1 Crispy Burger + 1/2 Chicken Ball + Fanta Float + 1 benefit card game",
+      "price": 30000,
+      "category": "Spesial"
+    },
+    {
+      "id": 2,
+      "img_src": "https://static.order.kfcku.com/images/items/lg/12987.jpg?v=3JNPr3",
+      "product_name": " MDL Chicken Combo ",
+      "description": "1 pc Chicken + 1 Rice + 1 Fanta Float + 1 benefit card game",
+      "price": 30000,
+      "category": "Spesial"
+    },
+    {
+      "id": 3,
+      "img_src": "https://static.order.kfcku.com/images/items/lg/13317.jpg?v=3JNPr3",
+      "product_name": " Back To School 1 ",
+      "description": "1 Cream Soup + 1 Fanta Float",
+      "price": 13636,
+      "category": "Spesial"
+    },
+    {
+      "id": 4,
+      "img_src": "https://static.order.kfcku.com/images/items/lg/13320.jpg?v=3JNPr3",
+      "product_name": " Back To School 2 ",
+      "description": "1 Spaghetti Deluxe + 1 Fanta Float",
+      "price": 13636,
+      "category": "Spesial"
+    },
+    {
+      "id": 5,
+      "img_src": "https://static.order.kfcku.com/images/items/lg/13323.jpg?v=3JNPr3",
+      "product_name": " Back To School 3 ",
+      "description": "1 Twisty + 1 Fanta Float",
+      "price": 18182,
+      "category": "Spesial"
+    },
+    {
+      "id": 6,
+      "img_src": "https://static.order.kfcku.com/images/items/lg/13326.jpg?v=3JNPr3",
+      "product_name": " Back To School 4 ",
+      "description": "1 Yakiniku Don + Fanta Float",
+      "price": 18182,
+      "category": "Spesial"
+    },
+    {
+      "id": 7,
+      "img_src": "https://static.order.kfcku.com/images/items/lg/13192.jpg?v=3JNPr3",
+      "product_name": " Paket Seru 1 ",
+      "description": "1 Pc Chicken + 1 Crispy Burger",
+      "price": 29091,
+      "category": "Spesial"
+    },
+    {
+      "id": 8,
+      "img_src": "https://static.order.kfcku.com/images/items/lg/13323.jpg?v=3JNPr3",
+      "product_name": " Paket Seru 2 ",
+      "description": "1 Spaghetty Delux + 1 Mocca Float",
+      "price": 18182,
+      "category": "Spesial"
+    },
+    {
+      "id": 9,
+      "img_src": "https://static.order.kfcku.com/images/items/lg/12988.jpg?v=3JNPr3",
+      "product_name": " MDL Burger Combo ",
+      "description": "1 Crispy Burger + 1/2 Chicken Ball + Fanta Float + 1 benefit card game",
+      "price": 30000,
+      "category": "Combo"
+    },
+    {
+      "id": 10,
+      "img_src": "https://static.order.kfcku.com/images/items/lg/12987.jpg?v=3JNPr3",
+      "product_name": " MDL Chicken Combo ",
+      "description": "1 pc Chicken + 1 Rice + 1 Fanta Float + 1 benefit card game",
+      "price": 30000,
+      "category": "Combo"
+    },
+    {
+      "id": 11,
+      "img_src": "https://static.order.kfcku.com/images/items/lg/13317.jpg?v=3JNPr3",
+      "product_name": " Back To School 1 ",
+      "description": "1 Cream Soup + 1 Fanta Float",
+      "price": 13636,
+      "category": "Combo"
+    },
+    {
+      "id": 12,
+      "img_src": "https://static.order.kfcku.com/images/items/lg/13320.jpg?v=3JNPr3",
+      "product_name": " Back To School 2 ",
+      "description": "1 Spaghetti Deluxe + 1 Fanta Float",
+      "price": 13636,
+      "category": "Combo"
+    },
+    {
+      "id": 13,
+      "img_src": "https://static.order.kfcku.com/images/items/lg/13323.jpg?v=3JNPr3",
+      "product_name": " Back To School 3 ",
+      "description": "1 Twisty + 1 Fanta Float",
+      "price": 18182,
+      "category": "Alacarte"
+    },
+    {
+      "id": 14,
+      "img_src": "https://static.order.kfcku.com/images/items/lg/13326.jpg?v=3JNPr3",
+      "product_name": " Back To School 4 ",
+      "description": "1 Yakiniku Don + Fanta Float",
+      "price": 18182,
+      "category": "Drinks"
+    }
   ]
 }

@@ -4,6 +4,7 @@ import { api } from "@/config/axios.config";
 import { loginSchema, registerSchema } from "@/schemas/auth.schema";
 import { z } from "zod";
 import { signIn, signOut } from "@/auth";
+import { AuthError } from "next-auth";
 export const loginAction = async (values: z.infer<typeof loginSchema>) => {
   try {
     await signIn("credentials", {
@@ -36,3 +37,17 @@ export const actionRegister = async (
     };
   }
 };
+
+export async function googleAuthenticate(
+  prevState: string | undefined,
+  formData: FormData
+) {
+  try {
+    await signIn("google");
+  } catch (error) {
+    if (error instanceof AuthError) {
+      return "google log in failed";
+    }
+    throw error;
+  }
+}

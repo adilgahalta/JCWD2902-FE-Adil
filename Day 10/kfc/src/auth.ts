@@ -3,6 +3,7 @@ import { api } from "@/config/axios.config";
 import { loginSchema } from "@/schemas/auth.schema";
 import NextAuth from "next-auth";
 import Credential from "next-auth/providers/credentials";
+import google from 'next-auth/providers/google'; // added import
 
 export const { signIn, signOut, handlers, auth } = NextAuth({
   pages: {
@@ -13,6 +14,10 @@ export const { signIn, signOut, handlers, auth } = NextAuth({
     maxAge: 60 * 60,
   },
   providers: [
+    google({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    }),
     Credential({
       authorize: async (credentials) => {
         try {
